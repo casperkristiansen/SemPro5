@@ -35,6 +35,26 @@ namespace SemesterProject5.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult GetDetails()
+        {
+            CreateDataModel umodel = new CreateDataModel();
+            umodel.companyId = Convert.ToInt32(HttpContext.Request.Form["txtCompanyId"]);
+            umodel.topic = HttpContext.Request.Form["txtTopic"].ToString();
+            umodel.degree = HttpContext.Request.Form["txtDegree"].ToString();
+            umodel.description = HttpContext.Request.Form["txtDescription"].ToString();
+            umodel.url = HttpContext.Request.Form["urlPicture"].ToString();
+            int result = umodel.SaveDetails();
+            if (result > 0)
+            {
+                ViewBag.Result = "Data Saved Successfully";
+            }
+            else
+            {
+                ViewBag.Result = "Something Went Wrong";
+            }
+            return View("Create");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
