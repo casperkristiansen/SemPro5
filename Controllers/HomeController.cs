@@ -35,6 +35,7 @@ namespace SemesterProject5.Controllers
         {
             return View();
         }
+        
         [HttpPost]
         public IActionResult GetDetails()
         {
