@@ -1,9 +1,6 @@
-﻿using CreateDataModel;
-using Npgsql;
-
-@{
+﻿@{
     ViewData["Title"] = "Search";
-    string[] TableHeaders = new string[] { "Post ID", "Company Name", "Topic", "Degree", "Description", "Image" };
+    string[] TableHeaders = new string[] { "Company Name", "Topic", "Degree", "Description", "Company Email", "Date Posted" };
 
 }
 
@@ -31,16 +28,12 @@ using Npgsql;
                     foreach (var Data in Model)
                     {
                         <tr>
-                            <td>@Data.PostId</td>
-                            <td>@Data.CompanyId</td>
                             <td>@Data.CompanyName</td>
                             <td>@Data.Topic</td>
                             <td>@Data.Degree</td>
                             <td>@Data.Description</td>
-                            <td>@Data.imageURL</td>
-                            <td>@Data.PhoneNo</td>
                             <td>@Data.Email</td>
-                            <td>@Data.Website</td>
+                            <td>@Data.Date</td>
                         </tr>
                     }
                 }

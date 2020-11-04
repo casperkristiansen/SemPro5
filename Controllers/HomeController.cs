@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SemesterProject5.Models;
+using System.Data.SqlClient;
 
 namespace SemesterProject5.Controllers
 {
@@ -21,6 +22,7 @@ namespace SemesterProject5.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            con.ConnectionString = GetConString.ConString();
         }
 
         public IActionResult Index()
@@ -34,6 +36,7 @@ namespace SemesterProject5.Controllers
         }
         public IActionResult Search()
         {
+            FetchData();
             return View(posts);
         }
         private void FetchData()
@@ -52,10 +55,6 @@ namespace SemesterProject5.Controllers
                 {
                     posts.Add(new Post()
                     {
-                        PostId = dr["postId"].ToString()
-                    ,
-                        CompanyId = dr["companyId"].ToString()
-                    ,
                         CompanyName = dr["name"].ToString()
                     ,
                         Topic = dr["topic"].ToString()
@@ -64,13 +63,9 @@ namespace SemesterProject5.Controllers
                     ,
                         Description = dr["description"].ToString()
                     ,
-                        ImageUrl = dr["imageURL"].ToString()
-                    ,
-                        PhoneNo = dr["phoneNo"].ToString()
-                    ,
                         Email = dr["email"].ToString()
                     ,
-                        Website = dr["webLink"].ToString()
+                        Date = dr["my_date"].ToString()
                     });
                 }
                 con.Close();
@@ -93,7 +88,6 @@ namespace SemesterProject5.Controllers
             umodel.topic = HttpContext.Request.Form["txtTopic"].ToString();
             umodel.degree = HttpContext.Request.Form["txtDegree"].ToString();
             umodel.description = HttpContext.Request.Form["txtDescription"].ToString();
-            umodel.url = HttpContext.Request.Form["urlPicture"].ToString();
             int result = umodel.SaveDetails();
             if (result > 0)
             {
