@@ -14,6 +14,7 @@ namespace SemesterProject5.Models
         public String degree { get; set; }
         public String description { get; set; }
         public String url { get; set; }
+        
 
         public int SaveDetails()
         {
@@ -25,6 +26,8 @@ namespace SemesterProject5.Models
             con.Close();
             return i;
         }
+        
+        
 
     }
 }

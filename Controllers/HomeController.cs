@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Npgsql;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,6 +12,10 @@ namespace SemesterProject5.Controllers
 {
     public class HomeController : Controller
     {
+        NpgsqlCommand com = new NpgsqlCommand();
+        NpgsqlDataReader dr;
+        NpgsqlConnection con = new NpgsqlConnection();
+        List<Post> posts = new List<Post>();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -29,7 +34,51 @@ namespace SemesterProject5.Controllers
         }
         public IActionResult Search()
         {
-            return View();
+            return View(posts);
+        }
+        private void FetchData()
+        {
+            if (posts.Count > 0)
+            {
+                posts.Clear();
+            }
+            try
+            {
+                con.Open();
+                com.Connection = con;
+                com.CommandText = "SELECT * FROM public.posts NATURAL JOIN company;";
+                dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    posts.Add(new Post()
+                    {
+                        PostId = dr["postId"].ToString()
+                    ,
+                        CompanyId = dr["companyId"].ToString()
+                    ,
+                        CompanyName = dr["name"].ToString()
+                    ,
+                        Topic = dr["topic"].ToString()
+                    ,
+                        Degree = dr["degree"].ToString()
+                    ,
+                        Description = dr["description"].ToString()
+                    ,
+                        ImageUrl = dr["imageURL"].ToString()
+                    ,
+                        PhoneNo = dr["phoneNo"].ToString()
+                    ,
+                        Email = dr["email"].ToString()
+                    ,
+                        Website = dr["webLink"].ToString()
+                    });
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public IActionResult Create()
         {

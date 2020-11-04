@@ -1,7 +1,51 @@
-﻿
+﻿using CreateDataModel;
+using Npgsql;
+
 @{
     ViewData["Title"] = "Search";
+    string[] TableHeaders = new string[] { "Post ID", "Company Name", "Topic", "Degree", "Description", "Image" };
+
 }
 
 <h1>Search</h1>
+
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        <tr>
+                            <td>@Data.PostId</td>
+                            <td>@Data.CompanyId</td>
+                            <td>@Data.CompanyName</td>
+                            <td>@Data.Topic</td>
+                            <td>@Data.Degree</td>
+                            <td>@Data.Description</td>
+                            <td>@Data.imageURL</td>
+                            <td>@Data.PhoneNo</td>
+                            <td>@Data.Email</td>
+                            <td>@Data.Website</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
 
