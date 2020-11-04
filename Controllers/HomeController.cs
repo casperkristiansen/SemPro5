@@ -34,6 +34,11 @@ namespace SemesterProject5.Controllers
         {
             return View();
         }
+
+        public IActionResult Reviews()
+        {
+            return View();
+        }
         public IActionResult Search()
         {
             FetchData();
