@@ -70,6 +70,8 @@ namespace SemesterProject5.Controllers
                     ,
                         Email = dr["email"].ToString()
                     ,
+                        Web = dr["weblink"].ToString()
+                    ,
                         Date = dr["my_date"].ToString()
                     });
                 }

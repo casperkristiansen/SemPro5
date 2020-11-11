@@ -1,6 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Search";
-    string[] TableHeaders = new string[] { "Company Name", "Topic", "Degree", "Description", "Company Email", "Date Posted" };
 
 }
 
@@ -13,6 +12,7 @@
             <th>Degree</th>
             <th>Description</th>
             <th>Email</th>
+            <th>Website</th>
             <th>Date</th>
         </tr>
     </thead>
@@ -22,14 +22,15 @@
             {
                 foreach (var Data in Model)
                 {
-                    <tr>
-                        <td>@Data.CompanyName</td>
-                        <td>@Data.Topic</td>
-                        <td>@Data.Degree</td>
-                        <td>@Data.Description</td>
-                        <td>@Data.Email</td>
-                        <td>@Data.Date</td>
-                    </tr>
+                <tr>
+                    <td>@Data.CompanyName</td>
+                    <td>@Data.Topic</td>
+                    <td>@Data.Degree</td>
+                    <td>@Data.Description</td>
+                    <td>@Data.Email</td>
+                    <td><a href="http://@Data.Web">@Data.Web</a></td>
+                    <td>@Data.Date</td>
+                </tr>
                 }
             }
         }

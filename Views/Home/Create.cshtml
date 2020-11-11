@@ -3,30 +3,28 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-<form asp-controller="Home" asp-action="GetDetails" method="post">
-    <table>
-        <tr>
-            <td>CompanyId :</td>
-            <td><input name="txtCompanyId" type="text" /></td>
-        </tr>
-        <tr>
-            <td>Project Topic:</td>
-            <td><input name="txtTopic" type="text" /></td>
-        </tr>
-        <tr>
-            <td>Educational Degree:</td>
-            <td><input name="txtDegree" type="text" /></td>
-        </tr>
-        <tr>
-            <td>Detailed Description:</td>
-            <td><textarea name="txtDescription" rows="5" cols="60">Enter description here...</textarea></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input id="Submit1" type="submit" vkalue="submit" /></td>
-        </tr>
-    </table>
-</form>
+<div class="form-style-10">
+    <h1>Create a post now!<span>Create your company's post and get attention from students!</span></h1>
+    <form asp-controller="Home" asp-action="GetDetails" method="post">
+        <div class="section"><span>1</span>Company Info</div>
+        <div class="inner-wrap">
+            <label>Your Company ID<input type="text" name="txtCompanyId" /></label>
+            <label>Project Topic<input type="text" name="txtTopic"/></label>
+        </div>
+
+        <div class="section"><span>2</span>Degree & Description</div>
+        <div class="inner-wrap">
+            <label>Degree <input type="text" name="txtDegree" /></label>
+            <label>Description of Project <textarea name="txtDescription">Enter description here...</textarea></label>
+        </div>
+        <div class="button-section">
+            <input id="Submit1" type="submit" name="Submit" vkalue="submit" />
+            <span class="privacy-policy">
+                <input type="checkbox" name="field7">You agree to our Terms and Policy.
+            </span>
+        </div>
+    </form>
+</div>
 <br />
 <br />
 

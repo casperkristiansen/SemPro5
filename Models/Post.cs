@@ -12,6 +12,7 @@ namespace SemesterProject5.Models
         public string Degree { get; set; }
         public string Description { get; set; }
         public string Email { get; set; }
+        public string Web { get; set; }
         public string Date { get; set; }
 
 
