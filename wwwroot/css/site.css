@@ -262,3 +262,13 @@ body {
 .fa {
     font-size: 50px;
 }
+.fcol {
+    text-align:center;
+}
+
+.ContainerBottom {
+    background: url(https://www.mhpcolorado.org/wp-content/uploads/2020/01/bigstock-Abstract-blue-background-wal-6002095.jpg) center;
+}
+.cardFrontpage {
+    padding:40px;
+}
