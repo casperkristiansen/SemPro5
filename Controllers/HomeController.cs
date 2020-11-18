@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SemesterProject5.Models;
 using System.Data.SqlClient;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SemesterProject5.Controllers
 {
@@ -82,11 +83,9 @@ namespace SemesterProject5.Controllers
                 throw ex;
             }
         }
-        public IActionResult Create()
-        {
-            return View();
-        }
-        
+        [Authorize(Roles = "Company, Admin")]
+        public ActionResult Create() => View();
+
         [HttpPost]
         public IActionResult GetDetails()
         {
