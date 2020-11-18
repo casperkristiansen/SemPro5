@@ -84,7 +84,12 @@ body {
     height:500px;
 }
 
+<<<<<<< HEAD
 /*FORM CSS*/
+=======
+<<<<<<< HEAD
+/*FORM CSS
+>>>>>>> 3bbc0a0... Frontpage
 .form-style-10 {
     width: 450px;
     padding: 30px;
@@ -213,7 +218,11 @@ body {
         margin-top: 10px;
         text-align: right;
     }
+<<<<<<< HEAD
 
+=======
+    */
+>>>>>>> 3bbc0a0... Frontpage
 
 /* BOX FRONT PAGE*/
 .* {
@@ -258,4 +267,8 @@ body {
 
 .fa {
     font-size: 50px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3bbc0a0... Frontpage
