@@ -13,9 +13,9 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #66C7FD;
+    border-color: #66C7FD;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -84,12 +84,10 @@ body {
     height:500px;
 }
 
-<<<<<<< HEAD
+
 /*FORM CSS*/
-=======
-<<<<<<< HEAD
-/*FORM CSS
->>>>>>> 3bbc0a0... Frontpage
+
+
 .form-style-10 {
     width: 450px;
     padding: 30px;
@@ -111,7 +109,7 @@ body {
     }
 
     .form-style-10 h1 {
-        background: #2A88AD;
+        background: #66C7FD;
         padding: 20px 30px 15px 30px;
         margin: -30px -30px 30px -30px;
         border-radius: 10px 10px 0 0;
@@ -123,7 +121,7 @@ body {
         -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
         -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
         box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-        border: 1px solid #257C9E;
+        border: 1px solid #66C7FD;
     }
 
         .form-style-10 h1 > span {
@@ -167,12 +165,12 @@ body {
 
     .form-style-10 .section {
         font: normal 20px 'Bitter', serif;
-        color: #2A88AD;
+        color: #66C7FD;
         margin-bottom: 5px;
     }
 
         .form-style-10 .section span {
-            background: #2A88AD;
+            background: #66C7FD;
             padding: 5px 10px 5px 10px;
             position: absolute;
             border-radius: 50%;
@@ -187,7 +185,7 @@ body {
 
     .form-style-10 input[type="button"],
     .form-style-10 input[type="submit"] {
-        background: #2A88AD;
+        background: #66C7FD;
         padding: 8px 20px 8px 20px;
         border-radius: 5px;
         -webkit-border-radius: 5px;
@@ -198,13 +196,13 @@ body {
         -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
         -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
         box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-        border: 1px solid #257C9E;
+        border: 1px solid #66C7FD;
         font-size: 15px;
     }
 
         .form-style-10 input[type="button"]:hover,
         .form-style-10 input[type="submit"]:hover {
-            background: #2A6881;
+            background: #66C7FD;
             -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
             -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
             box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
@@ -218,11 +216,7 @@ body {
         margin-top: 10px;
         text-align: right;
     }
-<<<<<<< HEAD
 
-=======
-    */
->>>>>>> 3bbc0a0... Frontpage
 
 /* BOX FRONT PAGE*/
 .* {
@@ -267,8 +261,4 @@ body {
 
 .fa {
     font-size: 50px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3bbc0a0... Frontpage
