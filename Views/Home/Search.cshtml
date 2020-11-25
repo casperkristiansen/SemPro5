@@ -3,39 +3,41 @@
 
 }
 
-<h1>Search</h1>
-<table id="example" class="display" cellspacing="0" width="100%">
-    <thead>
-        <tr>
-            <th>Company Name</th>
-            <th>Topic</th>
-            <th>Degree</th>
-            <th>Description</th>
-            <th>Email</th>
-            <th>Website</th>
-            <th>Date</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            if (Model != null)
-            {
-                foreach (var Data in Model)
+<div class="container">
+    <h1>Search</h1>
+    <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>Topic</th>
+                <th>Degree</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>Website</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model != null)
                 {
-                <tr>
-                    <td>@Data.CompanyName</td>
-                    <td>@Data.Topic</td>
-                    <td>@Data.Degree</td>
-                    <td>@Data.Description</td>
-                    <td>@Data.Email</td>
-                    <td><a href="http://@Data.Web" target="_blank">@Data.Web</a></td>
-                    <td>@Data.Date</td>
-                </tr>
+                    foreach (var Data in Model)
+                    {
+                        <tr>
+                            <td>@Data.CompanyName</td>
+                            <td>@Data.Topic</td>
+                            <td>@Data.Degree</td>
+                            <td>@Data.Description</td>
+                            <td>@Data.Email</td>
+                            <td><a href="http://@Data.Web" target="_blank">@Data.Web</a></td>
+                            <td>@Data.Date</td>
+                        </tr>
+                    }
                 }
             }
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
 
 @section scripts {
