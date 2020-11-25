@@ -272,3 +272,6 @@ body {
 .cardFrontpage {
     padding:40px;
 }
+.index {
+    width:100% !important
+}
