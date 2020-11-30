@@ -113,7 +113,11 @@ namespace SemesterProject5.Controllers
             }
         }
         [Authorize(Roles = "Company, Admin")]
-        public ActionResult Create() => View(companys);
+        public ActionResult Create()
+        {
+            FetchID();
+            return View(companys);
+        }
 
         [HttpPost]
         public IActionResult GetDetails()
