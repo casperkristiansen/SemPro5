@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SemesterProject5</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -23,25 +24,76 @@
                     <li class="nav-item"> <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Search">Search Project</a></li>
                     <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Create">Create Project</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
         </nav>
         <!-- END Navbar -->
-     
+
     </header>
     <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in maximus lectus. Nulla facilisi. Cras eget efficitur massa. Nam a ante ultrices odio commodo cursus. Aenean faucibus arcu ac dictum ultricies. Nullam molestie mauris in rhoncus gravida. Proin interdum aliquam dui vitae sagittis. Morbi in sagittis libero.
+                    </p>
+                </div>
 
-    <footer class="border-top footer text-muted">
+                <div class="col-xs-6 col-md-3">
+                    <h6></h6>
+                    <ul class="footer-links">
+                        
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Pages</h6>
+                    <ul class="footer-links">
+                        <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a class="nav-link" asp-area="" asp-controller="Search Project" asp-action="Search">Search Project</a></li>
+                        <li><a class="nav-link" asp-area="" asp-controller="Create Project" asp-action="Create">Create Project</a></li>
+                        <li><a class="nav-link" asp-area="" asp-controller="Contact Us" asp-action="Contact">Contact Us</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">
+                        Copyright &copy; 2020 All Rights Reserved by
+                        <a href="#">Project Portal</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a target=”_blank” class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a target=”_blank” class="twitter" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                        <li><a target=”_blank” class="instagram" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                        <li><a target=”_blank” class="linkedin" href="https://dk.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 - SemesterProject5 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer> -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
