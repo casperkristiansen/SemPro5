@@ -94,7 +94,7 @@ namespace SemesterProject5.Controllers
             {
                 con.Open();
                 com.Connection = con;
-                com.CommandText = "SELECT * FROM public.UserCompany;";
+                com.CommandText = "SELECT * FROM public.\"UserCompany\" NATURAL JOIN company;";
                 dr = com.ExecuteReader();
                 while(dr.Read())
                 {
@@ -102,7 +102,9 @@ namespace SemesterProject5.Controllers
                     {
                         CompanyId = dr["CompanyID"].ToString()
                         ,
-                        userId = dr["UserID"].ToString()
+                        UserId = dr["UserID"].ToString()
+                        ,
+                        Name = dr["email"].ToString()
                     });
                 }
                 con.Close();

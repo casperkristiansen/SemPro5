@@ -1,6 +1,22 @@
 ﻿
 @{
     ViewData["Title"] = "Create";
+    String comp = "0";
+    String name = "0";
+
+    if (Model != null)
+    {
+        foreach (var Data in Model)
+        {
+            name = @Data.Name;
+            if (User.Identity.Name == name)
+            {
+                comp = @Data.CompanyId;
+            }
+
+        }
+
+    }
 }
 
 <div class="form-style-10">
@@ -8,24 +24,8 @@
     <form asp-controller="Home" asp-action="GetDetails" method="post">
         <div class="section"><span>1</span>Company Info</div>
         <div class="inner-wrap">
-            <label>
-                Your Company ID<input type="text" name="txtCompanyId" />
-                @{
-                    if (Model != null)
-                    {
-                        foreach (var Data in Model)
-                        {
-                            if (@Data.UserId = User.Identity.ToString())
-                            {
-                                @Data.CompanyId
-                            }
-
-                        }
-
-                    }
-                }
-            </label>
-            <label>Project Topic<input type="text" name="txtTopic"/></label>
+            <label>Your Company ID = <textfield name="txtCompanyId">@comp </textfield></label>
+            <label>Project Topic<input type="text" name="txtTopic" /></label>
         </div>
 
         <div class="section"><span>2</span>Degree & Description</div>
