@@ -37,7 +37,7 @@ namespace SemesterProject5.Controllers
             return View();
         }
 
-        public IActionResult Reviews()
+        public IActionResult Contact()
         {
             return View();
         }
