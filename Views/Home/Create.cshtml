@@ -8,7 +8,23 @@
     <form asp-controller="Home" asp-action="GetDetails" method="post">
         <div class="section"><span>1</span>Company Info</div>
         <div class="inner-wrap">
-            <label>Your Company ID<input type="text" name="txtCompanyId" /></label>
+            <label>
+                Your Company ID<input type="text" name="txtCompanyId" />
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var Data in Model)
+                        {
+                            if (@Data.UserId = User.Identity.ToString())
+                            {
+                                @Data.CompanyId
+                            }
+
+                        }
+
+                    }
+                }
+            </label>
             <label>Project Topic<input type="text" name="txtTopic"/></label>
         </div>
 

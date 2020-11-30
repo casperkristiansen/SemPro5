@@ -18,6 +18,7 @@ namespace SemesterProject5.Controllers
         NpgsqlDataReader dr;
         NpgsqlConnection con = new NpgsqlConnection();
         List<Post> posts = new List<Post>();
+        List<CompanyID> companys = new List<CompanyID>();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -83,8 +84,36 @@ namespace SemesterProject5.Controllers
                 throw ex;
             }
         }
+        private void FetchID()
+        {
+            if (companys.Count > 0)
+            {
+                companys.Clear();
+            }
+            try
+            {
+                con.Open();
+                com.Connection = con;
+                com.CommandText = "SELECT * FROM public.UserCompany;";
+                dr = com.ExecuteReader();
+                while(dr.Read())
+                {
+                    companys.Add(new CompanyID()
+                    {
+                        CompanyId = dr["CompanyID"].ToString()
+                        ,
+                        userId = dr["UserID"].ToString()
+                    });
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         [Authorize(Roles = "Company, Admin")]
-        public ActionResult Create() => View();
+        public ActionResult Create() => View(companys);
 
         [HttpPost]
         public IActionResult GetDetails()
