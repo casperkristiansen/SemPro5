@@ -104,7 +104,7 @@ namespace SemesterProject5.Controllers
                         ,
                         UserId = dr["UserID"].ToString()
                         ,
-                        Name = dr["email"].ToString()
+                        Name = dr["Email"].ToString()
                     });
                 }
                 con.Close();
@@ -138,7 +138,7 @@ namespace SemesterProject5.Controllers
             {
                 ViewBag.Result = "Something Went Wrong";
             }
-            return View("Create");
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

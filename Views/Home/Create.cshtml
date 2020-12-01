@@ -1,15 +1,19 @@
 ﻿
 @{
+
     ViewData["Title"] = "Create";
     String comp = "0";
-    String name = "0";
+    String id = "0";
+
+
+    var userId = User.GetUserId();
 
     if (Model != null)
     {
         foreach (var Data in Model)
         {
-            name = @Data.Name;
-            if (User.Identity.Name == name)
+            id = @Data.UserId;
+            if (userId == id)
             {
                 comp = @Data.CompanyId;
             }
@@ -24,7 +28,7 @@
     <form asp-controller="Home" asp-action="GetDetails" method="post">
         <div class="section"><span>1</span>Company Info</div>
         <div class="inner-wrap">
-            <label>Your Company ID = <textfield name="txtCompanyId">@comp </textfield></label>
+            <label>Your Company ID <select name="txtCompanyId"><option value="@comp">@comp</option></select></label>
             <label>Project Topic<input type="text" name="txtTopic" /></label>
         </div>
 
