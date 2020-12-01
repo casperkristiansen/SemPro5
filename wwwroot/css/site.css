@@ -23,7 +23,7 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-/* Sticky header*/
+/* Sticky navbar*/
 .sticky {
     position: fixed;
     top: 0;
