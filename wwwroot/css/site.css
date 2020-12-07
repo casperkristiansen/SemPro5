@@ -23,54 +23,7 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-/* Sticky navbar*/
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-#navbar {
-    overflow: hidden;
-    z-index: 100;
-}
-.content {
-    padding: 16px;
-}
-.content + .sticky{
-    padding-top: 60px;
-}
 
-    /*Navbar Sticky ends*/
-
-    /* Sticky footer styles
--------------------------------------------------- 
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
- Sticky footer styles
--------------------------------------------------- */
     html {
         position: relative;
         min-height: 100%;
@@ -80,7 +33,6 @@ body {
     /* Margin bottom by footer height */
     /* margin-bottom: 60px; */
     color: black;
-    margin-top: 60px;
 }
 
     .footer {
@@ -106,7 +58,6 @@ body {
 
 
     /*FORM CSS*/
-
 
     .form-style-10 {
         width: 450px;
@@ -236,7 +187,7 @@ body {
             margin-top: 10px;
             text-align: right;
         }
-
+        /*FORM END*/
 
     /* BOX FRONT PAGE*/
     .* {

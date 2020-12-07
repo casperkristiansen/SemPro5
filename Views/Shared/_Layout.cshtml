@@ -12,95 +12,88 @@
 
 </head>
 <body>
-    <div class="header">
-
-    </div>
-    <header>
-        <!-- Start Navbar -->
-        <nav id="navbar" class="navbar navbar-expand-md bg-light navbar-light">
-            <div class="mr-auto">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" width="110" id="logo"></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Search">Search Project</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Create">Create Project</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
-        </nav>
+    <!-- Start Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-md bg-light navbar-light sticky-top">
+        <div class="mr-auto">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" width="110" id="logo"></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"> <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Search">Search Project</a></li>
+                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Create">Create Project</a></li>
+                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </nav>
       
         <!-- END Navbar -->
-
-    </header>
-    <div class="content">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    <!-- Site footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h6>About</h6>
-                    <p class="text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in maximus lectus. Nulla facilisi. Cras eget efficitur massa. Nam a ante ultrices odio commodo cursus. Aenean faucibus arcu ac dictum ultricies. Nullam molestie mauris in rhoncus gravida. Proin interdum aliquam dui vitae sagittis. Morbi in sagittis libero.
-                    </p>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                    <h6></h6>
-                    <ul class="footer-links">
-                        
-                    </ul>
-                </div>
-
-                <div class="col-xs-6 col-md-3">
-                    <h6>Pages</h6>
-                    <ul class="footer-links">
-                        <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Search">Search Project</a></li>
-                        <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Create">Create Project</a></li>
-                        <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
-                        
-                    </ul>
-                </div>
+            <div>
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
             </div>
-            <hr>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">
-                        Copyright &copy; 2020 All Rights Reserved by
-                        <a href="#">Project Portal</a>.
-                    </p>
-                </div>
+            <!-- Site footer -->
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h6>About</h6>
+                            <p class="text-justify">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in maximus lectus. Nulla facilisi. Cras eget efficitur massa. Nam a ante ultrices odio commodo cursus. Aenean faucibus arcu ac dictum ultricies. Nullam molestie mauris in rhoncus gravida. Proin interdum aliquam dui vitae sagittis. Morbi in sagittis libero.
+                            </p>
+                        </div>
 
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <ul class="social-icons">
-                        <li><a target=”_blank” class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                        <li><a target=”_blank” class="twitter" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                        <li><a target=”_blank” class="instagram" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                        <li><a target=”_blank” class="linkedin" href="https://dk.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+                        <div class="col-xs-6 col-md-3">
+                            <h6></h6>
+                            <ul class="footer-links">
+                            </ul>
+                        </div>
 
-    <!-- <footer class="border-top footer text-muted">
+                        <div class="col-xs-6 col-md-3">
+                            <h6>Pages</h6>
+                            <ul class="footer-links">
+                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Search">Search Project</a></li>
+                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Create">Create Project</a></li>
+                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+                            <p class="copyright-text">
+                                Copyright &copy; 2020 All Rights Reserved by
+                                <a href="#">Project Portal</a>.
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <ul class="social-icons">
+                                <li><a target=”_blank” class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target=”_blank” class="twitter" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                <li><a target=”_blank” class="instagram" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                                <li><a target=”_blank” class="linkedin" href="https://dk.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 - SemesterProject5 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer> -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
-</body>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            @RenderSection("Scripts", required: false)
+        </body>
 </html>
