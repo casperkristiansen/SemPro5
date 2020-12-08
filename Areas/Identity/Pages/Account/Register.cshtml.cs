@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Npgsql;
+using SemesterProject5.Models;
 
 namespace SemesterProject5.Areas.Identity.Pages.Account
 {
@@ -23,6 +25,7 @@ namespace SemesterProject5.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        NpgsqlDataReader dr;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
@@ -60,6 +63,26 @@ namespace SemesterProject5.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [DataType(DataType.Text)]
+            [Display(Name = "Company Name")]
+            public string CompanyName { get; set; }
+
+            [EmailAddress]
+            [Display(Name = "Company Email")]
+            public string CompanyEmail { get; set; }
+
+            [DataType(DataType.PhoneNumber)]
+            [Display(Name = "Company Phone")]
+            public string CompanyPhone { get; set; }
+
+            [DataType(DataType.Url)]
+            [Display(Name = "Company Website")]
+            public string CompanyWebsite { get; set; }
+
+            [DataType(DataType.Text)]
+            [Display(Name = "Checkbox Checked?")]
+            public string Checked { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -78,6 +101,33 @@ namespace SemesterProject5.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    if (Input.Checked == "true")
+                    {
+                        int id = 0;
+                        NpgsqlConnection con = new NpgsqlConnection(GetConString.ConString());
+                        NpgsqlCommand com = new NpgsqlCommand();
+                        con.Open();
+                        com.Connection = con;
+                        com.CommandText = "SELECT companyid FROM public.company ORDER BY \"companyid\" ASC";
+                        dr = com.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            id = (int)dr["companyid"] + 1;
+                        }
+
+                        con.Close();
+                        String query = "INSERT INTO public.company(companyid, name, email, phoneno, weblink) values ('" + id + "','" + Input.CompanyName + "','" + Input.CompanyEmail + "','" + Input.CompanyPhone + "','" + Input.CompanyWebsite + "')";
+                        String query1 = "INSERT INTO public.\"UserCompany\"(\"CompanyID\", \"UserID\") values ('" + id + "','" + user.Id + "')";
+                        String query2 = "INSERT INTO public.\"AspNetUserRoles\"(\"UserId\", \"RoleId\") values ('" + user.Id + "','" + 1 + "')";
+                        NpgsqlCommand cmd = new NpgsqlCommand(query, con);
+                        NpgsqlCommand cmd1 = new NpgsqlCommand(query1, con);
+                        NpgsqlCommand cmd2 = new NpgsqlCommand(query2, con);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        cmd1.ExecuteNonQuery();
+                        cmd2.ExecuteNonQuery();
+                        con.Close();
+                    }
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

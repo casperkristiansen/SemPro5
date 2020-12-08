@@ -24,6 +24,33 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+
+            <label>
+                Registering as a company?
+                <input type="checkbox" value="true" asp-for="Input.Checked" class="aboveage2" id="companycheck" />
+                <span asp-validation-for="Input.Checked" class="text-danger"></span>
+            </label>
+            <div>  </div>
+            <div class="form-group" id="company">
+                <label asp-for="Input.CompanyName"></label>
+                <input asp-for="Input.CompanyName" class="form-control" />
+                <span asp-validation-for="Input.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="company1">
+                <label asp-for="Input.CompanyEmail"></label>
+                <input asp-for="Input.CompanyEmail" class="form-control" />
+                <span asp-validation-for="Input.CompanyEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="company2">
+                <label asp-for="Input.CompanyPhone"></label>
+                <input asp-for="Input.CompanyPhone" class="form-control" />
+                <span asp-validation-for="Input.CompanyPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="company3">
+                <label asp-for="Input.CompanyWebsite"></label>
+                <input asp-for="Input.CompanyWebsite" class="form-control" />
+                <span asp-validation-for="Input.CompanyWebsite" class="text-danger"></span>
+            </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
@@ -31,4 +58,17 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $('#company').hide();
+        $('#company1').hide();
+        $('#company2').hide();
+        $('#company3').hide();
+        $('#companycheck').click(function () {
+            $('#company')[this.checked ? "show" : "hide"]();
+            $('#company1')[this.checked ? "show" : "hide"]();
+            $('#company2')[this.checked ? "show" : "hide"]();
+            $('#company3')[this.checked ? "show" : "hide"]();
+
+        });
+    </script>
 }
